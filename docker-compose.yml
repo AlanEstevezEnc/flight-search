@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./BT2-backend
+    ports:
+      - "8080:8080"
+    container_name: spring-backend
+
+  frontend:
+    build: ./BT2-frontend
+    ports:
+      - "5173:5173"
+    container_name: react-frontend
+    depends_on:
+      - backend
